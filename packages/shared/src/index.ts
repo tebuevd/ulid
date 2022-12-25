@@ -1,11 +1,11 @@
-// base32 alternative that avoids the letters I,L,O,U
-const CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
-
-// Ulid spec requires 80 bits of randomness
-const RANDOMNESS_BITS = 80;
-const UINT8ARRAY_SIZE = RANDOMNESS_BITS / 8;
-const BINARY_RADIX = 2;
-const BITS_PER_CROCKFORD_CHAR = RANDOMNESS_BITS / CROCKFORD.length;
+import {
+  BINARY_RADIX,
+  BITS_PER_CROCKFORD_CHAR,
+  CrockfordMapKey,
+  CROCKFORD_MAP,
+  TIME_BITS,
+  UINT8ARRAY_SIZE,
+} from "./constants";
 
 export function getRandomnessBits(prng: (arr: ArrayBufferView) => any) {
   const bits = new Uint8Array(UINT8ARRAY_SIZE);
@@ -19,11 +19,33 @@ export function getRandomnessBits(prng: (arr: ArrayBufferView) => any) {
   }, "");
 
   let numAsCrockfordString = "";
-
   for (let i = 0; i < numAsBinaryString.length; i += BITS_PER_CROCKFORD_CHAR) {
-    const segment = numAsBinaryString.slice(i, i + BITS_PER_CROCKFORD_CHAR);
-    const value = parseInt(segment, BINARY_RADIX);
-    numAsCrockfordString += CROCKFORD[value];
+    const key = numAsBinaryString.slice(
+      i,
+      i + BITS_PER_CROCKFORD_CHAR
+    ) as CrockfordMapKey;
+    numAsCrockfordString += CROCKFORD_MAP[key];
+  }
+
+  return numAsCrockfordString;
+}
+
+export function getTimeBits(time: number = Date.now()) {
+  //make sure time is an integer when passed in
+  time = Math.floor(time);
+
+  const timeInBinary = time.toString(BINARY_RADIX);
+  const padded =
+    Array(TIME_BITS - timeInBinary.length)
+      .fill("0")
+      .join("") + timeInBinary;
+
+  const firstletter = ("00" + padded.slice(0, 3)) as CrockfordMapKey;
+  let numAsCrockfordString = CROCKFORD_MAP[firstletter];
+
+  for (let i = 3; i < padded.length; i += BITS_PER_CROCKFORD_CHAR) {
+    const key = padded.slice(i, i + BITS_PER_CROCKFORD_CHAR) as CrockfordMapKey;
+    numAsCrockfordString += CROCKFORD_MAP[key];
   }
 
   return numAsCrockfordString;
