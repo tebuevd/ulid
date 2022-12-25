@@ -1,0 +1,16 @@
+{
+  "name": "ulid",
+  "version": "0.1.0",
+  "description": "A better library for ulid generation.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dinislam Tebuev",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
