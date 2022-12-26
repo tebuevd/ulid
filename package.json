@@ -4,6 +4,11 @@
   "description": "A better library for ulid generation.",
   "author": "Dinislam Tebuev",
   "license": "MIT",
+  "scripts": {
+    "build": "npm run build:commonjs && npm run build:esm",
+    "build:commonjs": "tsc -b tsconfig.packages.json",
+    "build:esm": "npm run build:esm --workspaces"
+  },
   "devDependencies": {
     "typescript": "^4.9.4"
   },
