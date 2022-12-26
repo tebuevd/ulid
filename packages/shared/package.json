@@ -4,6 +4,10 @@
   "description": "Internal utilities used in @ulid/ulid",
   "module": "esm/index.js",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tebuevd/ulid"
+  },
   "scripts": {
     "check": "tsc --noEmit",
     "build": "npm run build:esm && npm run build:commonjs",

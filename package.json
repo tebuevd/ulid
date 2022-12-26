@@ -4,6 +4,10 @@
   "description": "A better library for ulid generation.",
   "author": "Dinislam Tebuev",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tebuevd/ulid"
+  },
   "scripts": {
     "build": "npm run build:commonjs && npm run build:esm",
     "build:commonjs": "tsc -b tsconfig.packages.json",
