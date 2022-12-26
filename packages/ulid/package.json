@@ -1,7 +1,7 @@
 {
-  "name": "@ulid/browser",
+  "name": "@ulid/ulid",
   "version": "0.1.0",
-  "description": "",
+  "description": "ULID generation that works in browsers, backends, and edge runtimes.",
   "module": "esm/index.js",
   "main": "dist/index.js",
   "scripts": {
@@ -12,6 +12,11 @@
   },
   "author": "Dinislam Tebuev",
   "license": "MIT",
+  "dependencies": {
+    "@ulid/browser": "^0.1.0",
+    "@ulid/node": "^0.1.0",
+    "@ulid/shared": "^0.1.0"
+  },
   "devDependencies": {
     "typescript": "^4.9.4"
   }

@@ -1,7 +1,7 @@
 import {
   BINARY_RADIX,
   BITS_PER_CROCKFORD_CHAR,
-  CrockfordMapKey,
+  type CrockfordMapKey,
   CROCKFORD_MAP,
   TIME_BITS,
   UINT8ARRAY_SIZE,
@@ -41,7 +41,7 @@ export function getTimeBits(time: number = Date.now()) {
       .join("") + timeInBinary;
 
   const firstletter = ("00" + padded.slice(0, 3)) as CrockfordMapKey;
-  let numAsCrockfordString = CROCKFORD_MAP[firstletter];
+  let numAsCrockfordString = "" + CROCKFORD_MAP[firstletter];
 
   for (let i = 3; i < padded.length; i += BITS_PER_CROCKFORD_CHAR) {
     const key = padded.slice(i, i + BITS_PER_CROCKFORD_CHAR) as CrockfordMapKey;

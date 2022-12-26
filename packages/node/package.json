@@ -1,7 +1,7 @@
 {
-  "name": "@ulid/browser",
+  "name": "@ulid/node",
   "version": "0.1.0",
-  "description": "",
+  "description": "Node helper library for @ulid/ulid.",
   "module": "esm/index.js",
   "main": "dist/index.js",
   "scripts": {
@@ -10,9 +10,10 @@
     "build:esm": "tsc --module esnext --outDir esm",
     "build:commonjs": "tsc --module commonjs --outDir dist"
   },
-  "author": "Dinislam Tebuev",
-  "license": "MIT",
   "devDependencies": {
+    "@types/node": "^18.11.17",
     "typescript": "^4.9.4"
-  }
+  },
+  "author": "Dinislam Tebuev",
+  "license": "MIT"
 }
