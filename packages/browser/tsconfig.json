@@ -1,7 +1,10 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2020"]
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "rootDir": "src",
+    "outDir": "dist",
+    "tsBuildInfoFile": "../../.build-cache/browser.tsbuildinfo"
   },
   "include": ["src"]
 }

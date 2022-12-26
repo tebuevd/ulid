@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/browser" },
+    { "path": "./packages/node" },
+    { "path": "./packages/shared" },
+    { "path": "./packages/ulid" }
+  ]
+}

@@ -39,3 +39,4 @@ export declare const CROCKFORD_MAP: Readonly<{
     "11111": "Z";
 }>;
 export type CrockfordMapKey = keyof typeof CROCKFORD_MAP;
+//# sourceMappingURL=constants.d.ts.map
