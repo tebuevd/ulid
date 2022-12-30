@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/index.ts"],
+  "sourcesContent": ["import crypto from \"crypto\";\n\nexport function getPrng() {\n  if (typeof process !== \"undefined\" && process.versions.node) {\n    return crypto.getRandomValues ?? crypto.randomFillSync;\n  }\n\n  return undefined;\n}\n"],
+  "mappings": "AAAA,OAAOA,MAAY,SAEZ,SAASC,GAAU,CACxB,GAAI,OAAO,QAAY,KAAe,QAAQ,SAAS,KACrD,OAAOD,EAAO,iBAAmBA,EAAO,cAI5C",
+  "names": ["crypto", "getPrng"]
+}

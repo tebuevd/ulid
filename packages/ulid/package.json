@@ -1,27 +1,29 @@
 {
   "name": "@ulid/ulid",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.3.0",
   "description": "ULID generation that works in browsers, backends, and edge runtimes.",
-  "module": "esm/index.js",
-  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tebuevd/ulid"
   },
+  "main": "./dist/index.cjs",
+  "module": "./esm/index.mjs",
+  "types": "./dts/src/index.d.ts",
   "scripts": {
-    "check": "tsc --noEmit",
     "build": "npm run build:esm && npm run build:commonjs",
-    "build:esm": "tsc --module esnext --outDir esm",
-    "build:commonjs": "tsc --module commonjs --outDir dist"
+    "build:esm": "esbuild src/index.ts --bundle --platform=neutral --outfile=esm/index.mjs --packages=external --minify --sourcemap",
+    "build:commonjs": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.cjs --packages=external --minify --sourcemap"
   },
   "author": "Dinislam Tebuev",
   "license": "MIT",
   "dependencies": {
-    "@ulid/browser": "^0.1.0",
-    "@ulid/node": "^0.1.0",
-    "@ulid/shared": "^0.1.0"
+    "@ulid/browser": "^0.1.1-alpha.3.0",
+    "@ulid/node": "^0.1.1-alpha.3.0",
+    "@ulid/shared": "^0.1.1-alpha.3.0"
   },
   "devDependencies": {
-    "typescript": "^4.9.4"
+    "esbuild": "^0.16.12",
+    "typescript": "^4.9.4",
+    "ulid": "^2.3.0"
   }
 }

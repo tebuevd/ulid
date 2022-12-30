@@ -4,11 +4,11 @@ import { getRandomnessBits, getTimeBits } from "@ulid/shared";
 
 const prng = browserPrng() ?? nodePrng();
 
-export function ulid() {
+export function ulid(seedTime?: number) {
   if (!prng) {
     throw new Error(
       "No cryptographically secure PRNG found in the current environment."
     );
   }
-  return getTimeBits() + getRandomnessBits(prng);
+  return getTimeBits(seedTime) + getRandomnessBits(prng);
 }

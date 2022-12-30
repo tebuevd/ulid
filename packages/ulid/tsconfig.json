@@ -1,14 +1,18 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "tsBuildInfoFile": "../../.build-cache/ulid.tsbuildinfo"
+    "tsBuildInfoFile": "../../.build-cache/ulid.tsbuildinfo",
+    "outDir": "./dts",
+    "paths": {
+      "@ulid/browser": ["../browser/src/index.ts"],
+      "@ulid/node": ["../node/src/index.ts"],
+      "@ulid/shared": ["../shared/src/index.ts"]
+    }
   },
   "references": [
     { "path": "../browser" },
     { "path": "../node" },
     { "path": "../shared" }
   ],
-  "include": ["src"]
+  "include": ["src/**/*"]
 }

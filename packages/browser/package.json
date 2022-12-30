@@ -1,18 +1,18 @@
 {
   "name": "@ulid/browser",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.3.0",
   "description": "",
-  "module": "esm/index.js",
-  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tebuevd/ulid"
   },
+  "main": "./dist/index.cjs",
+  "module": "./esm/index.mjs",
+  "types": "./dts/src/index.d.ts",
   "scripts": {
-    "check": "tsc --noEmit",
     "build": "npm run build:esm && npm run build:commonjs",
-    "build:esm": "tsc --module esnext --outDir esm",
-    "build:commonjs": "tsc --module commonjs --outDir dist"
+    "build:esm": "esbuild src/index.ts --bundle --platform=neutral --outfile=esm/index.mjs --minify --sourcemap",
+    "build:commonjs": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.cjs --minify --sourcemap"
   },
   "author": "Dinislam Tebuev",
   "license": "MIT",
