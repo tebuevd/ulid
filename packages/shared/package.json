@@ -2,8 +2,8 @@
   "name": "@ulid/shared",
   "version": "0.1.1-alpha.2.0",
   "description": "Internal utilities used in @ulid/ulid",
-  "main": "./dist/index.js",
-  "module": "./esm/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./esm/index.mjs",
   "exports": {
     "import": "./esm/index.mjs",
     "require": "./dist/index.cjs"

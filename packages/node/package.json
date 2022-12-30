@@ -2,12 +2,8 @@
   "name": "@ulid/node",
   "version": "0.1.1-alpha.2.0",
   "description": "Node helper library for @ulid/ulid.",
-  "main": "./dist/index.js",
-  "module": "./esm/index.js",
-  "exports": {
-    "import": "./esm/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "main": "./dist/index.cjs",
+  "module": "./esm/index.mjs",
   "types": "./dts/src/index.d.ts",
   "scripts": {
     "build": "npm run build:esm && npm run build:commonjs",

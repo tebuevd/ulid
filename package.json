@@ -11,7 +11,8 @@
     "typescript": "^4.9.4"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "volta": {
     "node": "16.19.0",
