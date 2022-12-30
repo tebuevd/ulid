@@ -5,14 +5,16 @@
   "author": "Dinislam Tebuev",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:commonjs && npm run build:esm",
-    "build:commonjs": "tsc -b tsconfig.packages.json",
-    "build:esm": "npm run build:esm --workspaces"
+    "build": "npm run build --workspaces"
   },
   "devDependencies": {
     "typescript": "^4.9.4"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "volta": {
+    "node": "16.19.0",
+    "npm": "9.2.0"
+  }
 }

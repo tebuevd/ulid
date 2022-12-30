@@ -1,1 +1,7 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,OAAO,IAAI,WAAW,EAAE,MAAM,eAAe,CAAC;AACvD,OAAO,EAAE,OAAO,IAAI,QAAQ,EAAE,MAAM,YAAY,CAAC;AACjD,OAAO,EAAE,iBAAiB,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAE9D,MAAM,IAAI,GAAG,MAAA,WAAW,EAAE,mCAAI,QAAQ,EAAE,CAAC;AAEzC,MAAM,UAAU,IAAI;IAClB,IAAI,CAAC,IAAI,EAAE;QACT,MAAM,IAAI,KAAK,CACb,oEAAoE,CACrE,CAAC;KACH;IACD,OAAO,WAAW,EAAE,GAAG,iBAAiB,CAAC,IAAI,CAAC,CAAC;AACjD,CAAC"}
+{
+  "version": 3,
+  "sources": ["../src/index.ts"],
+  "sourcesContent": ["import { getPrng as browserPrng } from \"@ulid/browser\";\nimport { getPrng as nodePrng } from \"@ulid/node\";\nimport { getRandomnessBits, getTimeBits } from \"@ulid/shared\";\n\nconst prng = browserPrng() ?? nodePrng();\n\nexport function ulid(seedTime?: number) {\n  if (!prng) {\n    throw new Error(\n      \"No cryptographically secure PRNG found in the current environment.\"\n    );\n  }\n  return getTimeBits(seedTime) + getRandomnessBits(prng);\n}\n"],
+  "mappings": "AAAA,OAAS,WAAWA,MAAmB,gBACvC,OAAS,WAAWC,MAAgB,aACpC,OAAS,qBAAAC,EAAmB,eAAAC,MAAmB,eAE/C,IAAMC,EAAOJ,EAAY,GAAKC,EAAS,EAEhC,SAASI,EAAKC,EAAmB,CACtC,GAAI,CAACF,EACH,MAAM,IAAI,MACR,oEACF,EAEF,OAAOD,EAAYG,CAAQ,EAAIJ,EAAkBE,CAAI,CACvD",
+  "names": ["browserPrng", "nodePrng", "getRandomnessBits", "getTimeBits", "prng", "ulid", "seedTime"]
+}

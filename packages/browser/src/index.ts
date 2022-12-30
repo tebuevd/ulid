@@ -7,7 +7,7 @@ export function getPrng() {
     return self.crypto.getRandomValues;
   }
 
-  if (crypto) {
+  if (typeof crypto !== "undefined") {
     return crypto.getRandomValues;
   }
 

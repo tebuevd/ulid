@@ -1,13 +1,2 @@
-export function getPrng() {
-    if (typeof window !== "undefined" && window instanceof Window) {
-        return window.crypto.getRandomValues;
-    }
-    if (typeof self !== "undefined") {
-        return self.crypto.getRandomValues;
-    }
-    if (crypto) {
-        return crypto.getRandomValues;
-    }
-    return undefined;
-}
+function e(){if(typeof window<"u"&&window instanceof Window)return window.crypto.getRandomValues;if(typeof self<"u")return self.crypto.getRandomValues;if(typeof crypto<"u")return crypto.getRandomValues}export{e as getPrng};
 //# sourceMappingURL=index.js.map

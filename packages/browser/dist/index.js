@@ -1,17 +1,2 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPrng = void 0;
-function getPrng() {
-    if (typeof window !== "undefined" && window instanceof Window) {
-        return window.crypto.getRandomValues;
-    }
-    if (typeof self !== "undefined") {
-        return self.crypto.getRandomValues;
-    }
-    if (crypto) {
-        return crypto.getRandomValues;
-    }
-    return undefined;
-}
-exports.getPrng = getPrng;
+"use strict";var d=Object.defineProperty;var r=Object.getOwnPropertyDescriptor;var i=Object.getOwnPropertyNames;var u=Object.prototype.hasOwnProperty;var p=(n,e)=>{for(var o in e)d(n,o,{get:e[o],enumerable:!0})},a=(n,e,o,f)=>{if(e&&typeof e=="object"||typeof e=="function")for(let t of i(e))!u.call(n,t)&&t!==o&&d(n,t,{get:()=>e[t],enumerable:!(f=r(e,t))||f.enumerable});return n};var w=n=>a(d({},"__esModule",{value:!0}),n);var c={};p(c,{getPrng:()=>y});module.exports=w(c);function y(){if(typeof window<"u"&&window instanceof Window)return window.crypto.getRandomValues;if(typeof self<"u")return self.crypto.getRandomValues;if(typeof crypto<"u")return crypto.getRandomValues}0&&(module.exports={getPrng});
 //# sourceMappingURL=index.js.map

@@ -1,9 +1,9 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "tsBuildInfoFile": "../../.build-cache/shared.tsbuildinfo"
+    "tsBuildInfoFile": "../../.build-cache/shared.tsbuildinfo",
+    "outDir": "./dts"
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "references": []
 }

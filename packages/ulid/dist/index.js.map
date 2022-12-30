@@ -1,1 +1,7 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;;;AAAA,2CAAuD;AACvD,qCAAiD;AACjD,yCAA8D;AAE9D,MAAM,IAAI,GAAG,MAAA,IAAA,iBAAW,GAAE,mCAAI,IAAA,cAAQ,GAAE,CAAC;AAEzC,SAAgB,IAAI;IAClB,IAAI,CAAC,IAAI,EAAE;QACT,MAAM,IAAI,KAAK,CACb,oEAAoE,CACrE,CAAC;KACH;IACD,OAAO,IAAA,oBAAW,GAAE,GAAG,IAAA,0BAAiB,EAAC,IAAI,CAAC,CAAC;AACjD,CAAC;AAPD,oBAOC"}
+{
+  "version": 3,
+  "sources": ["../src/index.ts"],
+  "sourcesContent": ["import { getPrng as browserPrng } from \"@ulid/browser\";\nimport { getPrng as nodePrng } from \"@ulid/node\";\nimport { getRandomnessBits, getTimeBits } from \"@ulid/shared\";\n\nconst prng = browserPrng() ?? nodePrng();\n\nexport function ulid(seedTime?: number) {\n  if (!prng) {\n    throw new Error(\n      \"No cryptographically secure PRNG found in the current environment.\"\n    );\n  }\n  return getTimeBits(seedTime) + getRandomnessBits(prng);\n}\n"],
+  "mappings": "yaAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,UAAAE,IAAA,eAAAC,EAAAH,GAAA,IAAAI,EAAuC,yBACvCC,EAAoC,sBACpCC,EAA+C,wBAEzCC,KAAO,EAAAC,SAAY,MAAK,EAAAC,SAAS,EAEhC,SAASP,EAAKQ,EAAmB,CACtC,GAAI,CAACH,EACH,MAAM,IAAI,MACR,oEACF,EAEF,SAAO,eAAYG,CAAQ,KAAI,qBAAkBH,CAAI,CACvD",
+  "names": ["src_exports", "__export", "ulid", "__toCommonJS", "import_browser", "import_node", "import_shared", "prng", "browserPrng", "nodePrng", "seedTime"]
+}

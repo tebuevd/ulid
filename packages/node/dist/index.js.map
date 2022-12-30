@@ -1,1 +1,7 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;;;;;AAAA,oDAA4B;AAE5B,SAAgB,OAAO;;IACrB,IAAI,OAAO,OAAO,KAAK,WAAW,IAAI,OAAO,CAAC,QAAQ,CAAC,IAAI,EAAE;QAC3D,OAAO,MAAA,gBAAM,CAAC,eAAe,mCAAI,gBAAM,CAAC,cAAc,CAAC;KACxD;IAED,OAAO,SAAS,CAAC;AACnB,CAAC;AAND,0BAMC"}
+{
+  "version": 3,
+  "sources": ["../src/index.ts"],
+  "sourcesContent": ["import crypto from \"crypto\";\n\nexport function getPrng() {\n  if (typeof process !== \"undefined\" && process.versions.node) {\n    return crypto.getRandomValues ?? crypto.randomFillSync;\n  }\n\n  return undefined;\n}\n"],
+  "mappings": "0jBAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,aAAAE,IAAA,eAAAC,EAAAH,GAAA,IAAAI,EAAmB,qBAEZ,SAASF,GAAU,CACxB,GAAI,OAAO,QAAY,KAAe,QAAQ,SAAS,KACrD,OAAO,EAAAG,QAAO,iBAAmB,EAAAA,QAAO,cAI5C",
+  "names": ["src_exports", "__export", "getPrng", "__toCommonJS", "import_crypto", "crypto"]
+}

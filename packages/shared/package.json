@@ -2,13 +2,17 @@
   "name": "@ulid/shared",
   "version": "0.1.0",
   "description": "Internal utilities used in @ulid/ulid",
-  "module": "esm/index.js",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./dist/index.js"
+  },
+  "types": "./dts/src/index.d.ts",
   "scripts": {
-    "check": "tsc --noEmit",
     "build": "npm run build:esm && npm run build:commonjs",
-    "build:esm": "tsc --module esnext --outDir esm",
-    "build:commonjs": "tsc --module commonjs --outDir dist"
+    "build:esm": "esbuild src/index.ts --bundle --platform=neutral --outdir=esm --minify --sourcemap",
+    "build:commonjs": "esbuild src/index.ts --bundle --platform=node --outdir=dist --minify --sourcemap"
   },
   "devDependencies": {
     "tsx": "^3.12.1",
