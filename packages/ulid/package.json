@@ -1,6 +1,6 @@
 {
   "name": "@ulid/ulid",
-  "version": "0.1.1-alpha.2.0",
+  "version": "0.1.1-alpha.3.0",
   "description": "ULID generation that works in browsers, backends, and edge runtimes.",
   "main": "./dist/index.cjs",
   "module": "./esm/index.mjs",
@@ -13,9 +13,9 @@
   "author": "Dinislam Tebuev",
   "license": "MIT",
   "dependencies": {
-    "@ulid/browser": "^0.1.1-alpha.2.0",
-    "@ulid/node": "^0.1.1-alpha.2.0",
-    "@ulid/shared": "^0.1.1-alpha.2.0"
+    "@ulid/browser": "^0.1.1-alpha.3.0",
+    "@ulid/node": "^0.1.1-alpha.3.0",
+    "@ulid/shared": "^0.1.1-alpha.3.0"
   },
   "devDependencies": {
     "esbuild": "^0.16.12",

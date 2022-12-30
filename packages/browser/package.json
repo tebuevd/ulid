@@ -1,6 +1,6 @@
 {
   "name": "@ulid/browser",
-  "version": "0.1.1-alpha.2.0",
+  "version": "0.1.1-alpha.3.0",
   "description": "",
   "main": "./dist/index.cjs",
   "module": "./esm/index.mjs",
