@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/index.ts"],
-  "sourcesContent": ["export function getPrng() {\n  if (typeof window !== \"undefined\" && window instanceof Window) {\n    return window.crypto.getRandomValues;\n  }\n\n  if (typeof self !== \"undefined\") {\n    return self.crypto.getRandomValues;\n  }\n\n  if (typeof crypto !== \"undefined\") {\n    return crypto.getRandomValues;\n  }\n\n  return undefined;\n}\n"],
-  "mappings": "yaAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,aAAAE,IAAA,eAAAC,EAAAH,GAAO,SAASE,GAAU,CACxB,GAAI,OAAO,OAAW,KAAe,kBAAkB,OACrD,OAAO,OAAO,OAAO,gBAGvB,GAAI,OAAO,KAAS,IAClB,OAAO,KAAK,OAAO,gBAGrB,GAAI,OAAO,OAAW,IACpB,OAAO,OAAO,eAIlB",
-  "names": ["src_exports", "__export", "getPrng", "__toCommonJS"]
-}
